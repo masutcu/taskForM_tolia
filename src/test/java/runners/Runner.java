@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {
                 "pretty", //konsolu renklendirir
-                "html:target/default-cucumber-reports.html",
+                "html:TestOutput/htmlReport/cucumberHooks.html",
                 "json:target/json-reports/cucumber.json",
-                "junit:target/xml-report/cucumber.xml",
+                "junit:TestOutput/htmlReport/cucumber.xml",
                 "rerun:TestOutput/failed_scenario.txt"
         },
 
