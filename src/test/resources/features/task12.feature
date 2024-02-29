@@ -15,13 +15,13 @@ Feature:Automation Exercises Task12
 
   Scenario: Task12
     Given User goes to homePage
-    Then Verify that home page is visible successfully
-    And Click 'Products' button
-    Then user scrolls down the page
-    And Hover over "first" product and click Add to cart
-    And Click 'Continue Shopping' button
-    And Hover over "second" product and click Add to cart
-    And Click 'View Cart' button
-    Then Verify both products are added to Cart
-    Then Verify their prices, quantity and total price
+    Then  Verify that home page is visible successfully
+    And   Click 'Products' button
+    Then  user scrolls down the page
+    And   Hover over "first" product and click Add to cart
+    And   Click 'Continue Shopping' button
+    And   Hover over "second" product and click Add to cart
+    And   Click 'View Cart' button
+    Then  Verify both products are added to Cart
+    Then  Verify their prices, quantity and total price
 

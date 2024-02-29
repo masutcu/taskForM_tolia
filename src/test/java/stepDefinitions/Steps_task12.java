@@ -13,10 +13,11 @@ import pages.CartPage;
 import pages.ProductPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.time.Duration;
 
-public class Steps_task12 {
+public class Steps_task12 extends ReusableMethods{
     ProductPage locate=new ProductPage();
     CartPage cartPage=new CartPage();
     Actions actions;
@@ -34,11 +35,13 @@ public class Steps_task12 {
     public void click_button(String arg) throws InterruptedException {
 
         if (arg.equals("Products")){
+            showElementWithFrame("//a[@href='/products']");
            locate.productsButton.click();
            Thread.sleep(2000);
            Driver.getDriver().navigate().refresh();
 
         } else if (arg.equals("View Cart")) {
+            showElementWithFrame("//a[text()=' Cart']");
             locate.viewCartButton.click();
         }
 
@@ -50,7 +53,7 @@ public class Steps_task12 {
 
     }
     @Then("Verify their prices, quantity and total price")
-    public void verify_their_prices_quantity_and_total_price() {
+    public void verify_their_prices_quantity_and_total_price() throws InterruptedException {
         Assert.assertTrue(cartPage.price1.isDisplayed() && cartPage.price2.isDisplayed());
         Assert.assertTrue(cartPage.quantity1.isDisplayed() && cartPage.quantity2.isDisplayed());
         Assert.assertTrue(cartPage.total1.isDisplayed() && cartPage.total2.isDisplayed());
@@ -64,8 +67,12 @@ public class Steps_task12 {
         int total2=Integer.parseInt(cartPage.total2.getText().split(" ")[1]);
         System.out.println("total1 :"+total1+",  total2 :"+total2);
 
+        showElementWithFrame("(//td[@class='cart_total'])[1]");
+        Thread.sleep(1000);
+        showElementWithFrame("(//td[@class='cart_total'])[2]");
+
         Assert.assertTrue(total1==price1*quantity1);
-        Assert.assertTrue(total2==price2*quantity2+1);
+        Assert.assertTrue(total2==price2*quantity2);
 
     }
 
@@ -82,8 +89,10 @@ public class Steps_task12 {
         wait=new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
 
         if (arg0.equals("first")){
+            showElementWithFrame("(//a[@data-product-id='1'])");
             locate.firstProduct.click();
         } else if (arg0.equals("second")) {
+            showElementWithFrame("(//a[@data-product-id='2'])");
             locate.secondProduct.click();
         }
         //Continue button açılan pencerede olduğu için explicit wait kullanıldı
