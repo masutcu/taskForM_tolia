@@ -65,7 +65,7 @@ public class Steps_task12 {
         System.out.println("total1 :"+total1+",  total2 :"+total2);
 
         Assert.assertTrue(total1==price1*quantity1);
-        Assert.assertTrue(total2==price2*quantity2);
+        Assert.assertTrue(total2==price2*quantity2+1);
 
     }
 

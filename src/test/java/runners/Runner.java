@@ -8,14 +8,12 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {
                 "pretty", //konsolu renklendirir
-                "html:TestOutput/htmlReport/cucumberHooks.html",
-                "json:target/json-reports/cucumber.json",
-                "junit:TestOutput/htmlReport/cucumber.xml",
+                "html:raporlar/CucumberRapor.html",
                 "rerun:TestOutput/failed_scenario.txt"
         },
 
         features = "src/test/resources/features",
-        glue = "stepDefinitions",
+        glue = {"stepDefinitions","hooks"},
         tags = "@task12",
         dryRun = false,
         monochrome = false
