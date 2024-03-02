@@ -41,7 +41,6 @@ public class Steps_task12 extends ReusableMethods{
            Driver.getDriver().navigate().refresh();
 
         } else if (arg.equals("View Cart")) {
-            showElementWithFrame("//a[text()=' Cart']");
             locate.viewCartButton.click();
         }
 
@@ -67,6 +66,7 @@ public class Steps_task12 extends ReusableMethods{
         int total2=Integer.parseInt(cartPage.total2.getText().split(" ")[1]);
         System.out.println("total1 :"+total1+",  total2 :"+total2);
 
+        //burada fiyat alanlarında toplam fiyat üzerinden assertion yapıldığı için dikkat çekmek amacıyla çerçeve kullanıldı
         showElementWithFrame("(//td[@class='cart_total'])[1]");
         Thread.sleep(1000);
         showElementWithFrame("(//td[@class='cart_total'])[2]");
@@ -89,10 +89,8 @@ public class Steps_task12 extends ReusableMethods{
         wait=new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
 
         if (arg0.equals("first")){
-            showElementWithFrame("(//a[@data-product-id='1'])");
             locate.firstProduct.click();
         } else if (arg0.equals("second")) {
-            showElementWithFrame("(//a[@data-product-id='2'])");
             locate.secondProduct.click();
         }
         //Continue button açılan pencerede olduğu için explicit wait kullanıldı

@@ -3,7 +3,6 @@ package hooks;
 import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import utilities.Driver;
 import utilities.ReusableMethods;
 

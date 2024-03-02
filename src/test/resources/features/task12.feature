@@ -1,4 +1,4 @@
-@task12
+@task12 #Not:Testin Runner class dan çalıştırılması gerekir.
 Feature:Automation Exercises Task12
         #TASK12
         #1. Launch browser
