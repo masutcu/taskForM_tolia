@@ -9,8 +9,9 @@ import org.junit.runner.RunWith;
         plugin = {
                 "pretty", //konsolu renklendirir
                 "html:raporlar/CucumberRapor.html",
-                "rerun:TestOutput/failed_scenario.txt"
-        },
+                "json:target/json-reports/cucumber.json",
+                "junit:TestOutput/htmlReport/cucumber.xml",
+                "rerun:TestOutput/failed_scenario.txt"},
 
         features = "src/test/resources/features",
         glue = {"stepDefinitions","hooks"},

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="63.012" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Automation Exercises Task12" name="Task12" time="38.501">
+<system-out><![CDATA[
+Given User goes to homePage.................................................passed
+Then Verify that home page is visible successfully..........................passed
+And Click 'Products' button.................................................passed
+Then user scrolls down the page.............................................passed
+And Hover over "first" product and click Add to cart........................passed
+And Click 'Continue Shopping' button........................................passed
+And Hover over "second" product and click Add to cart.......................passed
+And Click 'View Cart' button................................................passed
+Then Verify both products are added to Cart.................................passed
+Then Verify their prices, quantity and total price..........................passed
+]]></system-out>
+</testcase>
+</testsuite>

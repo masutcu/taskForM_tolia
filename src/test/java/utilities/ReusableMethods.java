@@ -19,6 +19,7 @@ public class ReusableMethods {
             try {
                 // Google Chrome'un çalıştırılması
                 String chromePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
+
                 String command = chromePath + " " + raporYolu;
                 Process process = Runtime.getRuntime().exec(command);
 
